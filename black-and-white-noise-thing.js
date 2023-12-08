@@ -1,0 +1,6 @@
+noise(15).modulateScale(o0).out(o1)
+shape(4, 0.5)
+	.repeat(10, 10, () => Math.sin(time), () => Math.cos(time))
+	.modulatePixelate(o1)
+	.blend(osc(25, 0.1).modulateRotate(osc(10)).pixelate(80))
+	.out()
