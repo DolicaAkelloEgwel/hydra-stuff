@@ -1,0 +1,7 @@
+func = () => Math.cos(time * 0.25)
+osc(5, 0.025, 1.5)
+	.mult(osc(5, -0.025, 1.5)
+    .colorama(50)
+		.rotate(Math.PI, 0.25))
+		.modulatePixelate(voronoi(10).modulateScale(o0, () => func()), () => func())
+		.out()
