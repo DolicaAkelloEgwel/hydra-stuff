@@ -1,0 +1,12 @@
+speed = 0.75
+shape(4, 0.9, 0)
+	.repeat(15, 15)
+	.add(o0, 0.75)
+	.scrollX(() => Math.sin(time * speed))
+	.scrollY(() => Math.sin(time * speed) * Math.cos(time * speed))
+	.modulate(osc(25))
+	.diff(gradient()
+		.add(voronoi(20))
+		.luma(0.25)
+		.modulate(o0))
+	.out()
